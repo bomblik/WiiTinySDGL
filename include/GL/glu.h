@@ -1,3 +1,9 @@
+#ifndef GLU_H
+#define GLU_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 void gluPerspective( GLdouble fovy, GLdouble aspect,
 		     GLdouble zNear, GLdouble zFar );
@@ -21,3 +27,9 @@ void gluDisk( GLUquadricObj *qobj,
               GLint slices, GLint loops );
 
 void drawTorus(float rc, int numc, float rt, int numt);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

@@ -2,15 +2,15 @@
 # C compiler
 
 # linux / Windows MinGW
-CC= gcc
-CFLAGS= -g -Wall -O2 -w
+CC=powerpc-eabi-gcc
+CFLAGS= -Wl,-q -g -Wall -O2 -ftree-vectorize -fomit-frame-pointer -ffast-math -mrvl -mcpu=750 -meabi -mhard-float -I $(INCLUDES) -I $(DEVKITPRO)/portlibs/ppc/include -I $(DEVKITPRO)/portlibs/wii/include -I $(DEVKITPRO)/portlibs/wii/include/SDL
 LFLAGS=
 
 #####################################################################
 # SDL configuration (for the examples only)
 
-UI_LIBS=$(shell sdl-config --libs)
-UI_INCLUDES=$(shell sdl-config --cflags)
+UI_LIBS=$(shell $(DEVKITPRO)/portlibs/wii/bin/sdl-config --libs)
+UI_INCLUDES=$(shell $(DEVKITPRO)/portlibs/wii/bin/sdl-config --cflags)
 
 
 #####################################################################
@@ -33,6 +33,5 @@ GL_DEPS= ../lib/libTinySDGL.a
 
 ####################################################################
 # Compile and link control
-
 DIRS= src examples
 

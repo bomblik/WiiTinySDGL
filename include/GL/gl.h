@@ -831,6 +831,10 @@ void glDebug(int mode);
 void glInit(void *zbuffer);
 void glClose(void);
 
+void gluLookAt(GLdouble eyex, GLdouble eyey, GLdouble eyez, GLdouble centerx,
+     GLdouble centery, GLdouble centerz, GLdouble upx, GLdouble upy,
+     GLdouble upz);
+
 #ifdef __cplusplus
 }
 #endif

@@ -1,6 +1,10 @@
 #ifndef _tgl_zbuffer_h_
 #define _tgl_zbuffer_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  * Z buffer
  */
@@ -149,5 +153,9 @@ typedef void (*ZB_fillTriangleFunc)(ZBuffer  *,
 void gl_free(void *p);
 void *gl_malloc(int size);
 void *gl_zalloc(int size);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* _tgl_zbuffer_h_ */
